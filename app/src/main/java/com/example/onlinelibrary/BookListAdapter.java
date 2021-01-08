@@ -30,6 +30,7 @@ public class BookListAdapter extends RecyclerView.Adapter<BookListAdapter.BookIt
     public void onBindViewHolder(@NonNull BookListAdapter.BookItemView holder, int position) {
         BookItem book=bookItem.get(position);
         holder.img.setImageResource(book.getImg());
+
     }
 
     @Override

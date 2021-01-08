@@ -2,18 +2,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:title="راهنما"
         android:id="@+id/Guide"
-        android:icon="@drawable/ic_launcher_background"/>
+        android:icon="@drawable/guide"/>
     <item android:title="تنظيمات"
         android:id="@+id/setting"
-        android:icon="@drawable/ic_launcher_background"/>
+        android:icon="@drawable/setting"/>
     <item android:title="خانه"
         android:id="@+id/home"
-        android:icon="@drawable/ic_launcher_background"/>
+        android:icon="@drawable/home_black"/>
     <item android:title="فهرست"
         android:id="@+id/Contents"
-        android:icon="@drawable/ic_launcher_background"/>
+        android:icon="@drawable/contents"/>
     <item android:title="حساب من"
         android:id="@+id/My_account"
-        android:icon="@drawable/ic_launcher_background"/>
+        android:icon="@drawable/account"/>
 
 </menu>

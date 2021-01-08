@@ -22,7 +22,7 @@ public class AppListAdapter extends RecyclerView.Adapter<AppListAdapter.AppItemV
     @NonNull
     @Override
     public AppItemView onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View item= LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_app_item,null,false);
+        View item= LayoutInflater.from(parent.getContext()).inflate(R.layout.app_item,null,false);
         return new AppItemView(item);
     }
 

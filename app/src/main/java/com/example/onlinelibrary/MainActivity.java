@@ -8,24 +8,30 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    RecyclerView recyclerView;
+    RecyclerView list;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        recyclerView=findViewById(R.id.list);
+        list=findViewById(R.id.list_main);
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+
+        list.setLayoutManager(new LinearLayoutManager(this));
 
         ArrayList<Object> listItem=generateItems();
 
         ListAdapter adapter=new ListAdapter(listItem);
-        recyclerView.setAdapter(adapter);
+        list.setAdapter(adapter);
     }
 
     private ArrayList<Object> generateItems() {
@@ -35,16 +41,16 @@ public class MainActivity extends AppCompatActivity {
         bannerItems.add(new BannerItem(R.drawable.banner));
         bannerItems.add(new BannerItem(R.drawable.banner));
         bannerItems.add(new BannerItem(R.drawable.banner));
-        BannerListItem bannerListItem = new BannerListItem("پربازديد ترين ها", bannerItems);
+        BannerListItem bannerListItem = new BannerListItem(bannerItems);
         data.add(bannerListItem);
 
         ArrayList<AppItem> appItems=new ArrayList<>();
-        appItems.add(new AppItem("بيشتر بدانيد",R.drawable.item));
-        appItems.add(new AppItem("مقالات علمي",R.drawable.item));
-        appItems.add(new AppItem("حلقه هاي كتاب خواني",R.drawable.item));
-        appItems.add(new AppItem("برنامه مطالعاتي",R.drawable.item));
+        appItems.add(new AppItem("بيشتر بدانيد  ",R.drawable.more));
+        appItems.add(new AppItem("مقالات علمی  ",R.drawable.scientific_articles));
+        appItems.add(new AppItem("حلقه های     ",R.drawable.reading_circles));
+        appItems.add(new AppItem("برنامه مطالعاتی",R.drawable.studyprogram));
 
-        AppListItem appListItem=new AppListItem("پرفروش ترين ها",appItems);
+        AppListItem appListItem=new AppListItem(appItems);
         data.add(appListItem);
 
         ArrayList<BookItem> bookItems =new ArrayList<>();
@@ -55,8 +61,30 @@ public class MainActivity extends AppCompatActivity {
         bookItems.add(new BookItem(R.drawable.book_test));
         bookItems.add(new BookItem(R.drawable.book_test));
 
-        BookListItem bookListItem=new BookListItem(bookItems);
+        BookListItem bookListItem=new BookListItem("پربازدیدترینها",bookItems);
         data.add(bookListItem);
+
+        ArrayList<BookItem> bookItems1 =new ArrayList<>();
+        bookItems1.add(new BookItem(R.drawable.book_test));
+        bookItems1.add(new BookItem(R.drawable.book_test));
+        bookItems1.add(new BookItem(R.drawable.book_test));
+        bookItems1.add(new BookItem(R.drawable.book_test));
+        bookItems1.add(new BookItem(R.drawable.book_test));
+        bookItems1.add(new BookItem(R.drawable.book_test));
+
+        BookListItem bookListItem1=new BookListItem("پرفروش ترینها",bookItems);
+        data.add(bookListItem1);
+
+        ArrayList<BookItem> bookItems2 =new ArrayList<>();
+        bookItems2.add(new BookItem(R.drawable.book_test));
+        bookItems2.add(new BookItem(R.drawable.book_test));
+        bookItems2.add(new BookItem(R.drawable.book_test));
+        bookItems2.add(new BookItem(R.drawable.book_test));
+        bookItems2.add(new BookItem(R.drawable.book_test));
+        bookItems2.add(new BookItem(R.drawable.book_test));
+
+        BookListItem bookListItem2=new BookListItem("جدید ترین ها",bookItems);
+        data.add(bookListItem2);
 
         return data;
 

@@ -1,7 +1,7 @@
 package com.example.onlinelibrary;
 
 public class BannerItem {
-    private int img;
+    int img;
 
     public  BannerItem(int img){
         this.img=img;

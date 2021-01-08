@@ -25,15 +25,15 @@ public class ListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         if(viewType==0){
             View item= LayoutInflater.from(parent.getContext()).inflate(R.layout.banner_list_item,null,false);
-            return new BannerItem(item);
+            return new BannerItems(item);
         }
         else if(viewType==1){
             View item= LayoutInflater.from(parent.getContext()).inflate(R.layout.app_list_item,null,false);
-            return  new AppItem(item);
+            return  new AppItems(item);
         }
         else if(viewType==2){
             View item= LayoutInflater.from(parent.getContext()).inflate(R.layout.book_list_item,null,false);
-            return  new BookItem(item);
+            return  new BookItems(item);
         }
         else
             return null;
@@ -41,40 +41,43 @@ public class ListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        if(holder instanceof  BannerItem){
-//            ((BannerItem) holder).img.setImageResource(R.drawable.banner);
+        if(holder instanceof  BannerItems){
+
             BannerListItem item= (BannerListItem) mItems.get(position);
 
-            LinearLayoutManager linearLayoutManager=new LinearLayoutManager(((BannerItem) holder).list.getContext());
+            LinearLayoutManager linearLayoutManager=new LinearLayoutManager(((BannerItems) holder).list1.getContext());
 
             linearLayoutManager.setOrientation(RecyclerView.HORIZONTAL);
 
-            ((BannerItem) holder).list.setLayoutManager(linearLayoutManager);
+            ((BannerItems) holder).list1.setLayoutManager(linearLayoutManager);
             BannerListAdapter bannerListAdapter=new BannerListAdapter(item.getItems());
-            ((BannerItem) holder).list.setAdapter(bannerListAdapter);
+            ((BannerItems) holder).list1.setAdapter(bannerListAdapter);
 
         }
-        else if(holder instanceof AppItem){
+        else if(holder instanceof AppItems){
             AppListItem item= (AppListItem) mItems.get(position);
-            ((AppItem) holder).text.setText(item.getTitle());
-            LinearLayoutManager linearLayoutManager=new LinearLayoutManager(((AppItem) holder).list.getContext());
+            LinearLayoutManager linearLayoutManager=new LinearLayoutManager(((AppItems) holder).list2.getContext());
 
             linearLayoutManager.setOrientation(RecyclerView.HORIZONTAL);
 
-            ((AppItem) holder).list.setLayoutManager(linearLayoutManager);
+            ((AppItems) holder).list2.setLayoutManager(linearLayoutManager);
             AppListAdapter appListAdapter=new AppListAdapter(item.getItems());
-            ((AppItem) holder).list.setAdapter(appListAdapter);
+            ((AppItems) holder).list2.setAdapter(appListAdapter);
+
+
 
         }
-        else if(holder instanceof BookItem){
+        else if(holder instanceof BookItems){
             BookListItem item= (BookListItem) mItems.get(position);
-            LinearLayoutManager linearLayoutManager=new LinearLayoutManager(((BookItem) holder).list.getContext());
+            ((BookItems) holder).text_title.setText(item.getTitle());
+
+            LinearLayoutManager linearLayoutManager=new LinearLayoutManager(((BookItems) holder).list3.getContext());
 
             linearLayoutManager.setOrientation(RecyclerView.HORIZONTAL);
 
-            ((BookItem) holder).list.setLayoutManager(linearLayoutManager);
+            ((BookItems) holder).list3.setLayoutManager(linearLayoutManager);
             BookListAdapter bookListAdapter=new BookListAdapter(item.getItems());
-            ((BookItem) holder).list.setAdapter(bookListAdapter);
+            ((BookItems) holder).list3.setAdapter(bookListAdapter);
 
         }
 
@@ -86,60 +89,61 @@ public class ListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     }
     @Override
     public int getItemViewType(int position) {
-        if(mItems.get(position) instanceof BannerItem)
+        if(mItems.get(position) instanceof BannerListItem)
             return 0;
-        else if(mItems.get(position) instanceof AppItem)
+        else if(mItems.get(position) instanceof AppListItem)
             return 1;
-        else if (mItems.get(position) instanceof BookItem)
+        else if (mItems.get(position) instanceof BookListItem)
             return 2;
         else
             return 3;
     }
 
-    class BannerItem extends RecyclerView.ViewHolder{
+    class BannerItems extends RecyclerView.ViewHolder{
 
-        protected ImageView img;
-        protected RecyclerView list;
+        protected RecyclerView list1;
+        protected ImageView image;
         protected LinearLayout linearLayout;
 
-        public BannerItem(@NonNull View itemView) {
+        public BannerItems(@NonNull View itemView) {
             super(itemView);
-            img=itemView.findViewById(R.id.img_banner);
-            list=itemView.findViewById(R.id.banner_list);
+            list1=itemView.findViewById(R.id.banner_list);
+            image=itemView.findViewById(R.id.img_banner);
             linearLayout=itemView.findViewById(R.id.Linear_list_banner);
         }
     }
 
-    class AppItem extends RecyclerView.ViewHolder{
+    class AppItems extends RecyclerView.ViewHolder{
 
-        protected TextView text;
-        protected ImageView img;
-        protected RecyclerView list;
+
+        protected RecyclerView list2;
         protected LinearLayout linearLayout;
+        protected ImageView image;
 
-        public AppItem(@NonNull View itemView) {
+        public AppItems(@NonNull View itemView) {
             super(itemView);
-            img=itemView.findViewById(R.id.img_app);
-            text=itemView.findViewById(R.id.text_app);
-            list=itemView.findViewById(R.id.app_list);
+
+            list2=itemView.findViewById(R.id.app_list);
+            image=itemView.findViewById(R.id.img_app);
             linearLayout=itemView.findViewById(R.id.Linear_list_app);
 
         }
     }
 
-    class BookItem extends RecyclerView.ViewHolder{
+    class BookItems extends RecyclerView.ViewHolder{
 
-        protected ImageView img;
-        protected  TextView text_title;
-        protected RecyclerView list;
+
+        protected TextView text_title;
+        protected RecyclerView list3;
+        protected ImageView image;
         protected LinearLayout linearLayout;
 
-        public BookItem(@NonNull View itemView) {
+        public BookItems(@NonNull View itemView) {
             super(itemView);
 
-            img=itemView.findViewById(R.id.img_book);
             text_title=itemView.findViewById(R.id.text_title_list);
-            list=itemView.findViewById(R.id.book_list);
+            list3=itemView.findViewById(R.id.book_list);
+            image=itemView.findViewById(R.id.img_book);
             linearLayout=itemView.findViewById(R.id.Linear_list_book);
         }
     }

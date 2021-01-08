@@ -28,21 +28,22 @@ public class BannerListAdapter extends RecyclerView.Adapter<BannerListAdapter.Ba
     @Override
     public void onBindViewHolder(@NonNull BannerItemView holder, int position) {
          BannerItem banner=bannerItem.get(position);
-         holder.img.setImageResource(banner.getImg());
+         holder.image.setImageResource(banner.getImg());
     }
 
     @Override
     public int getItemCount() {
         return bannerItem.size();
     }
+
     class  BannerItemView extends  RecyclerView.ViewHolder{
 
-        protected ImageView img;
+        protected ImageView image;
         protected LinearLayout linearLayout;
 
         public BannerItemView(@NonNull View itemView) {
             super(itemView);
-            img=itemView.findViewById(R.id.img_banner);
+            image=itemView.findViewById(R.id.img_banner);
             linearLayout=itemView.findViewById(R.id.Linear_Banner);
 
         }

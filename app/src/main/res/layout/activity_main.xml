@@ -5,27 +5,57 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:weightSum="2"
     tools:context=".MainActivity">
 
-<!--    <SearchView-->
-<!--        android:id="@+id/Search_View"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_margin="20dp"-->
-<!--        android:clickable="true"-->
-<!--        android:queryHint="كتابت رو پيدا كن..."-->
-<!--        android:background="@drawable/shape_searchbar"/>-->
-
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/list"
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="20dp">
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="50dp"
+        android:src="@drawable/shape_searchbar"/>
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:paddingRight="5dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/ic_baseline_search_24"/>
 
-<!--    <com.google.android.material.bottomnavigation.BottomNavigationView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:background="@drawable/shape_bottom_navigation"-->
-<!--        app:menu="@menu/menu_bottom_navigation"/>-->
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="#866b70"
+            android:paddingRight="40dp"
+            android:background="@null"
+            android:paddingTop="10dp"
+            android:fontFamily="@font/lalezar"
+            android:hint="کتابت رو پیدا کن"/>
+
+</RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+
+<com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:itemTextColor="@color/selector_navigation"
+    app:itemRippleColor="@color/selector_navigation"
+    app:labelVisibilityMode="labeled"
+    app:itemIconTint="@color/selector_navigation"
+    android:background="@drawable/shape_bottom_navigation"
+    app:itemTextAppearanceActive="@style/bottomNavigationView.Active"
+    app:menu="@menu/menu_bottom_navigation"/>
+
 
 </LinearLayout>
