@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         login = findViewById(R.id.button_login);
+        name = findViewById(R.id.username_login);
         create_account = findViewById(R.id.create_account);
 
 
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent i = new Intent(MainActivity.this, Activity_create_account.class);
                 startActivity(i);
             }
+
         });
 
 
