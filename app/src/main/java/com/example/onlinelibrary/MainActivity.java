@@ -1,16 +1,20 @@
 package com.example.onlinelibrary;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import java.util.ArrayList;
+import androidx.appcompat.widget.AppCompatButton;
 
 public class MainActivity extends AppCompatActivity {
 
-    RecyclerView list;
+    EditText name, pass;
+    TextView create_account;
+    AppCompatButton login;
+
 
 
     @Override
@@ -18,71 +22,30 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        list = findViewById(R.id.list_main);
+
+        login = findViewById(R.id.button_login);
+        create_account = findViewById(R.id.create_account);
+
+
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, Activity_after_sign_in.class);
+                startActivity(i);
+            }
+        });
+
+        create_account.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, Activity_create_account.class);
+                startActivity(i);
+            }
+        });
 
 
 
-        list.setLayoutManager(new LinearLayoutManager(this));
-
-        ArrayList<Object> listItem=generateItems();
-
-        ListAdapter adapter=new ListAdapter(listItem);
-        list.setAdapter(adapter);
-    }
-
-    private ArrayList<Object> generateItems() {
-        ArrayList<Object> data = new ArrayList<>();
-
-        ArrayList<BannerItem> bannerItems=new ArrayList<>();
-        bannerItems.add(new BannerItem(R.drawable.banner));
-        bannerItems.add(new BannerItem(R.drawable.banner));
-        bannerItems.add(new BannerItem(R.drawable.banner));
-        BannerListItem bannerListItem = new BannerListItem(bannerItems);
-        data.add(bannerListItem);
-
-        ArrayList<AppItem> appItems=new ArrayList<>();
-        appItems.add(new AppItem("بيشتر بدانيد  ",R.drawable.more));
-        appItems.add(new AppItem("مقالات علمی  ",R.drawable.scientific_articles));
-        appItems.add(new AppItem("حلقه های     ",R.drawable.reading_circles));
-        appItems.add(new AppItem("برنامه مطالعاتی",R.drawable.studyprogram));
-
-        AppListItem appListItem=new AppListItem(appItems);
-        data.add(appListItem);
-
-        ArrayList<BookItem> bookItems =new ArrayList<>();
-        bookItems.add(new BookItem(R.drawable.book_test));
-        bookItems.add(new BookItem(R.drawable.book_test));
-        bookItems.add(new BookItem(R.drawable.book_test));
-        bookItems.add(new BookItem(R.drawable.book_test));
-        bookItems.add(new BookItem(R.drawable.book_test));
-        bookItems.add(new BookItem(R.drawable.book_test));
-
-        BookListItem bookListItem=new BookListItem("پربازدیدترینها",bookItems);
-        data.add(bookListItem);
-
-        ArrayList<BookItem> bookItems1 =new ArrayList<>();
-        bookItems1.add(new BookItem(R.drawable.book_test));
-        bookItems1.add(new BookItem(R.drawable.book_test));
-        bookItems1.add(new BookItem(R.drawable.book_test));
-        bookItems1.add(new BookItem(R.drawable.book_test));
-        bookItems1.add(new BookItem(R.drawable.book_test));
-        bookItems1.add(new BookItem(R.drawable.book_test));
-
-        BookListItem bookListItem1=new BookListItem("پرفروش ترینها",bookItems);
-        data.add(bookListItem1);
-
-        ArrayList<BookItem> bookItems2 =new ArrayList<>();
-        bookItems2.add(new BookItem(R.drawable.book_test));
-        bookItems2.add(new BookItem(R.drawable.book_test));
-        bookItems2.add(new BookItem(R.drawable.book_test));
-        bookItems2.add(new BookItem(R.drawable.book_test));
-        bookItems2.add(new BookItem(R.drawable.book_test));
-        bookItems2.add(new BookItem(R.drawable.book_test));
-
-        BookListItem bookListItem2=new BookListItem("جدید ترین ها",bookItems);
-        data.add(bookListItem2);
-
-        return data;
 
     }
+
     }
