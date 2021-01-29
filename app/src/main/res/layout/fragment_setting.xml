@@ -1,0 +1,547 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:weightSum="100"
+    android:background="@drawable/main_background">
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="92">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="100"
+            android:orientation="vertical" >
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="10" />
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="90"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:backgroundTint="#e8e8e8"
+                app:cardCornerRadius="20dp"
+                android:layout_marginBottom="5dp"
+                app:cardElevation="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:weightSum="100">
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="9" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="91"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="20dp"
+                                android:layout_marginLeft="20dp">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:backgroundTint="#000"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_gravity="center"
+                                    android:id="@+id/arrow_name"
+                                    android:minWidth="35dp"
+                                    android:minHeight="35dp"
+                                    android:background="@drawable/arrow_left" />
+                                <Space
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="10dp"
+                                    android:textColor="#000"
+                                    android:paddingRight="15dp"
+                                    android:textSize="18sp"
+                                    android:text="تغییر نام کاربری" />
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="100dp"
+                                android:orientation="vertical"
+                                android:id="@+id/change_name_box"
+                                android:visibility="gone"
+                                android:weightSum="20">
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="10"
+                                        android:layout_marginRight="20dp"
+                                        android:layout_marginLeft="20dp">
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:orientation="vertical"
+                                            android:weightSum="15">
+
+                                            <Space
+                                                android:layout_width="match_parent"
+                                                android:layout_height="0dp"
+                                                android:layout_weight="4.5" />
+
+                                            <EditText
+                                                android:layout_width="match_parent"
+                                                android:layout_height="0dp"
+                                                android:layout_weight="9"
+                                                android:paddingLeft="20dp"
+                                                android:paddingRight="20dp"
+                                                android:background="@drawable/background_text_login"
+                                                android:inputType="text"
+                                                android:id="@+id/name_new_setting"
+                                                android:maxLength="20"
+                                                android:lines="1"/>
+                                            <Space
+                                                android:layout_width="match_parent"
+                                                android:layout_height="0dp"
+                                                android:layout_weight="1.5" />
+
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:weightSum="20"
+                                            android:orientation="vertical"
+                                            android:layout_height="match_parent">
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="0dp"
+                                                android:layout_weight="10"
+                                                android:gravity="bottom"
+                                                android:layout_gravity="right"
+                                                android:paddingRight="15dp"
+                                                android:fontFamily="@font/lalezar"
+                                                android:textColor="#8b8b8b"
+                                                android:text="نام کاربری جدید"/>
+
+                                            <Space
+                                                android:layout_width="match_parent"
+                                                android:layout_height="0dp"
+                                                android:layout_weight="10" />
+
+                                        </LinearLayout>
+                                    </RelativeLayout>
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="10"
+                                        android:layout_marginLeft="30dp"
+                                        android:gravity="center_vertical">
+
+                                        <androidx.appcompat.widget.AppCompatButton
+                                            android:id="@+id/button_name_setting"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center_horizontal"
+                                            android:background="@drawable/button_login"
+                                            android:fontFamily="@font/lalezar"
+                                            android:minWidth="80dp"
+                                            android:minHeight="38dp"
+                                            android:enabled="false"
+                                            android:text="ثبت"
+                                            android:textColor="#fff" />
+                                    </RelativeLayout>
+
+
+
+                            </LinearLayout>
+
+                            </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="20dp"
+                                android:layout_marginLeft="20dp">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:backgroundTint="#000"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_gravity="center"
+                                    android:id="@+id/arrow_password"
+                                    android:minWidth="35dp"
+                                    android:minHeight="35dp"
+                                    android:background="@drawable/arrow_left" />
+
+                                <Space
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="10dp"
+                                    android:textColor="#000"
+                                    android:paddingRight="15dp"
+                                    android:textSize="18sp"
+                                    android:text="تغییر رمز عبور" />
+
+
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="150dp"
+                                android:orientation="vertical"
+                                android:visibility="gone"
+                                android:id="@+id/change_password_box"
+                                android:weightSum="28">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="8"
+                                    android:layout_marginRight="20dp"
+                                    android:layout_marginLeft="20dp"
+                                    tools:ignore="NestedWeights">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="vertical"
+                                        android:weightSum="13">
+
+                                        <Space
+                                            android:layout_width="match_parent"
+                                            android:layout_height="0dp"
+                                            android:layout_weight="4" />
+
+                                        <EditText
+                                            android:layout_width="match_parent"
+                                            android:paddingRight="20dp"
+                                            android:paddingLeft="20dp"
+                                            android:layout_height="0dp"
+                                            android:layout_weight="9"
+                                            android:background="@drawable/background_text_login"
+                                            android:inputType="text"
+                                            android:id="@+id/password_past_setting"
+                                            android:maxLength="20"
+                                            android:lines="1"/>
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:weightSum="20"
+                                        android:orientation="vertical"
+                                        android:layout_height="match_parent">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="0dp"
+                                            android:layout_weight="12"
+                                            android:gravity="bottom"
+                                            android:layout_gravity="right"
+                                            android:paddingRight="15dp"
+                                            android:fontFamily="@font/lalezar"
+                                            android:textColor="#8b8b8b"
+                                            android:text="رمز عبور قدیم"/>
+
+                                        <Space
+                                            android:layout_width="match_parent"
+                                            android:layout_height="0dp"
+                                            android:layout_weight="8" />
+
+                                    </LinearLayout>
+
+
+                                </RelativeLayout>
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="10"
+                                    android:layout_marginRight="20dp"
+                                    android:layout_marginLeft="20dp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="vertical"
+                                        android:weightSum="15">
+
+                                        <Space
+                                            android:layout_width="match_parent"
+                                            android:layout_height="0dp"
+                                            android:layout_weight="4.5" />
+
+                                        <EditText
+                                            android:layout_width="match_parent"
+                                            android:layout_height="0dp"
+                                            android:layout_weight="9"
+                                            android:paddingLeft="20dp"
+                                            android:paddingRight="20dp"
+                                            android:background="@drawable/background_text_login"
+                                            android:inputType="text"
+                                            android:id="@+id/password_new_setting"
+                                            android:maxLength="20"
+                                            android:lines="1"/>
+                                        <Space
+                                            android:layout_width="match_parent"
+                                            android:layout_height="0dp"
+                                            android:layout_weight="1.5" />
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:weightSum="20"
+                                        android:orientation="vertical"
+                                        android:layout_height="match_parent">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="0dp"
+                                            android:layout_weight="10"
+                                            android:gravity="bottom"
+                                            android:layout_gravity="right"
+                                            android:paddingRight="15dp"
+                                            android:fontFamily="@font/lalezar"
+                                            android:textColor="#8b8b8b"
+                                            android:text="رمز عبور جدید"/>
+
+                                        <Space
+                                            android:layout_width="match_parent"
+                                            android:layout_height="0dp"
+                                            android:layout_weight="10" />
+
+                                    </LinearLayout>
+                                </RelativeLayout>
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="10"
+                                    android:layout_marginLeft="30dp"
+                                    android:gravity="center_vertical">
+
+                                    <androidx.appcompat.widget.AppCompatButton
+                                        android:id="@+id/button_password_setting"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_horizontal"
+                                        android:background="@drawable/button_login"
+                                        android:fontFamily="@font/lalezar"
+                                        android:minWidth="80dp"
+                                        android:minHeight="38dp"
+                                        android:enabled="false"
+                                        android:text="ثبت"
+                                        android:textColor="#fff" />
+                                </RelativeLayout>
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="20dp"
+                                android:layout_marginLeft="20dp">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:backgroundTint="#000"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_gravity="center"
+                                    android:id="@+id/arrow_email"
+                                    android:minWidth="35dp"
+                                    android:minHeight="35dp"
+                                    android:background="@drawable/arrow_left" />
+                                <Space
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="10dp"
+                                    android:textColor="#000"
+                                    android:paddingRight="15dp"
+                                    android:textSize="18sp"
+                                    android:text="تغییر ایمیل" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="100dp"
+                                android:orientation="vertical"
+                                android:visibility="gone"
+                                android:weightSum="28">
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="28"
+                                    android:id="@+id/change_email_box"
+                                    android:orientation="vertical"
+                                    android:weightSum="20"
+                                    tools:ignore="NestedWeights">
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="10"
+                                        android:layout_marginRight="20dp"
+                                        android:layout_marginLeft="20dp">
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:orientation="vertical"
+                                            android:weightSum="15">
+
+                                            <Space
+                                                android:layout_width="match_parent"
+                                                android:layout_height="0dp"
+                                                android:layout_weight="4.5" />
+
+                                            <EditText
+                                                android:layout_width="match_parent"
+                                                android:layout_height="0dp"
+                                                android:layout_weight="9"
+                                                android:paddingLeft="20dp"
+                                                android:paddingRight="20dp"
+                                                android:background="@drawable/background_text_login"
+                                                android:inputType="text"
+                                                android:id="@+id/email_new_setting"
+                                                android:lines="1"/>
+                                            <Space
+                                                android:layout_width="match_parent"
+                                                android:layout_height="0dp"
+                                                android:layout_weight="1.5" />
+
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:weightSum="20"
+                                            android:orientation="vertical"
+                                            android:layout_height="match_parent">
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="0dp"
+                                                android:layout_weight="10"
+                                                android:gravity="bottom"
+                                                android:layout_gravity="right"
+                                                android:paddingRight="15dp"
+                                                android:fontFamily="@font/lalezar"
+                                                android:textColor="#8b8b8b"
+                                                android:text="ایمیل جدید"/>
+
+                                            <Space
+                                                android:layout_width="match_parent"
+                                                android:layout_height="0dp"
+                                                android:layout_weight="10" />
+
+                                        </LinearLayout>
+                                    </RelativeLayout>
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="10"
+                                        android:layout_marginLeft="30dp"
+                                        android:gravity="center_vertical">
+
+                                        <androidx.appcompat.widget.AppCompatButton
+                                            android:id="@+id/button_email_setting"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center_horizontal"
+                                            android:background="@drawable/button_login"
+                                            android:fontFamily="@font/lalezar"
+                                            android:minWidth="80dp"
+                                            android:minHeight="38dp"
+                                            android:enabled="false"
+                                            android:text="ثبت"
+                                            android:textColor="#fff" />
+                                    </RelativeLayout>
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:weightSum="100">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="19"
+                android:src="@drawable/up_image_mainactivity"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="81" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7" />
+
+</LinearLayout>

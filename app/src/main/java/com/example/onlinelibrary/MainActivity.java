@@ -33,6 +33,14 @@ public class MainActivity extends AppCompatActivity {
 
         login = findViewById(R.id.button_login);
 
+//        login.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent i = new Intent(MainActivity.this, Test.class);
+//                startActivity(i);
+//
+//            }
+//        });
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,8 +81,15 @@ public class MainActivity extends AppCompatActivity {
                     else {
                         String pass_sent = database.checkUserFromDb(name_user);
                         if (pass_sent.length() != 0) {
-                            Intent intent = new Intent(MainActivity.this, Activity_after_sign_in.class);
-                            startActivity(intent);
+                            if (pass_sent.equals(pass_user)) {
+                                Intent intent = new Intent(MainActivity.this, Activity_after_sign_in.class);
+                                startActivity(intent);
+                            } else {
+                                Toast.makeText(MainActivity.this, "پسورد نامعتبر است", Toast.LENGTH_SHORT).show();
+                                pass.setText("");
+                                pass.requestFocus();
+                            }
+
                         } else {
                             Toast.makeText(MainActivity.this, "اکانت وجود ندارد", Toast.LENGTH_SHORT).show();
                             name.setText("");
@@ -87,16 +102,14 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+
         create_account.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, Activity_create_account.class);
-                startActivity(i);
+
             }
 
         });
-
-
 
 
     }
