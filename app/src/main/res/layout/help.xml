@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:weightSum="2"
-    tools:context=".Activity_after_sign_in">
+    android:weightSum="2">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -36,23 +34,25 @@
 
     </RelativeLayout>
 
-    <FrameLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:id="@+id/frame_for_fragment"
-        android:layout_weight="2" />
+        android:layout_weight="2">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
 
     <com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:itemTextColor="@color/selector_navigation"
         app:itemRippleColor="@color/selector_navigation"
-        android:id="@+id/bottom_navigation"
         app:labelVisibilityMode="labeled"
         app:itemIconTint="@color/selector_navigation"
         android:background="@drawable/shape_bottom_navigation"
         app:itemTextAppearanceActive="@style/bottomNavigationView.Active"
         app:menu="@menu/menu_bottom_navigation"/>
-
 
 </LinearLayout>

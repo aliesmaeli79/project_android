@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     TextView create_account;
     AppCompatButton login;
     static DataBaseUser database;
+    static UserAccount userAccount;
 
 
 
@@ -33,14 +34,6 @@ public class MainActivity extends AppCompatActivity {
 
         login = findViewById(R.id.button_login);
 
-//        login.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent i = new Intent(MainActivity.this, Test.class);
-//                startActivity(i);
-//
-//            }
-//        });
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,6 +75,9 @@ public class MainActivity extends AppCompatActivity {
                         String pass_sent = database.checkUserFromDb(name_user);
                         if (pass_sent.length() != 0) {
                             if (pass_sent.equals(pass_user)) {
+                                userAccount = new UserAccount();
+                                userAccount.setName(name_user);
+                                userAccount.setPassword(pass_sent);
                                 Intent intent = new Intent(MainActivity.this, Activity_after_sign_in.class);
                                 startActivity(intent);
                             } else {
@@ -106,7 +102,8 @@ public class MainActivity extends AppCompatActivity {
         create_account.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(MainActivity.this, Activity_create_account.class);
+                startActivity(intent);
             }
 
         });

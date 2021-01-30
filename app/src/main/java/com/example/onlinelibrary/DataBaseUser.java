@@ -44,14 +44,46 @@ public class DataBaseUser extends SQLiteOpenHelper {
         db.execSQL("delete from users where name=\"" + userAccount.getName() + "\"  ");
     }
 
-    public void updatePasswordDb(UserAccount userAccount) {
+    public boolean updateNameDb(String name_old, String name_new) {
         SQLiteDatabase db = getWritableDatabase();
-        db.execSQL("update users set password=\"" + userAccount.getPassword() + "\" where name=\"" + userAccount.getName() + "\" ");
+        try {
+            db.execSQL("update users set name=\"" + name_new + "\" where name=\"" + name_old + "\" ");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
     }
 
-    public void updateEmailDb(UserAccount userAccount) {
+    public void updatePasswordDb(String name_user, String password_new) {
         SQLiteDatabase db = getWritableDatabase();
-        db.execSQL("update users set email=\"" + userAccount.getEmail() + "\" where name=\"" + userAccount.getName() + "\" ");
+        db.execSQL("update users set password=\"" + password_new + "\" where name=\"" + name_user + "\" ");
+    }
+
+    private boolean checkSameEmail(String name_user,String email_new) {
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery("select * from users", null);
+        cursor.moveToFirst();
+        if (cursor.getCount() > 0) {
+            do {
+                if (cursor.getString(cursor.getColumnIndex("name")).equals(name_user)) {
+                    if (cursor.getString(cursor.getColumnIndex("email")).equals(email_new)) {
+                        return false;
+                    }
+                }
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        return true;
+    }
+
+    public boolean updateEmailDb(String name_user, String email_new) {
+        if (checkSameEmail(name_user, email_new)) {
+            SQLiteDatabase db = getWritableDatabase();
+            db.execSQL("update users set email=\"" + email_new + "\" where name=\"" + name_user + "\" ");
+            return true;
+        }
+        return false;
     }
 
     public String checkUserFromDb(String name_sent) {
