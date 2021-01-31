@@ -1,9 +1,11 @@
 package com.example.onlinelibrary;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -12,10 +14,19 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class Fragment_home extends Fragment {
 
     RecyclerView list;
+
+
+
+
 
     @Nullable
     @Override
@@ -27,22 +38,25 @@ public class Fragment_home extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
         list = view.findViewById(R.id.list_main);
-
         list.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        ArrayList<Object> listItem = generateItems();
 
+
+        ArrayList<Object> listItem = generateItems();
         ListAdapter adapter = new ListAdapter(listItem);
 
         list.setAdapter(adapter);
+
+
 
     }
 
 
     private ArrayList<Object> generateItems() {
         ArrayList<Object> data = new ArrayList<>();
+
+
 
         ArrayList<BannerItem> bannerItems=new ArrayList<>();
         bannerItems.add(new BannerItem(R.drawable.banner));
@@ -61,7 +75,8 @@ public class Fragment_home extends Fragment {
         data.add(appListItem);
 
         ArrayList<BookItem> bookItems =new ArrayList<>();
-        bookItems.add(new BookItem(R.drawable.book_test));
+
+
         bookItems.add(new BookItem(R.drawable.book_test));
         bookItems.add(new BookItem(R.drawable.book_test));
         bookItems.add(new BookItem(R.drawable.book_test));

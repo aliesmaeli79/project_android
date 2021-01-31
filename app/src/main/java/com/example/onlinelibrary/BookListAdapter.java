@@ -10,13 +10,21 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class BookListAdapter extends RecyclerView.Adapter<BookListAdapter.BookItemView> {
 
-    private ArrayList<BookItem> bookItem =new ArrayList<>();
-    BookListAdapter(ArrayList<BookItem> items){
-        bookItem.addAll(items);
+
+
+
+    private ArrayList<BookItem> bookItem;
+
+    BookListAdapter(ArrayList<BookItem> bookItem){
+
+        this.bookItem=bookItem;
     }
 
     @NonNull
@@ -29,7 +37,9 @@ public class BookListAdapter extends RecyclerView.Adapter<BookListAdapter.BookIt
     @Override
     public void onBindViewHolder(@NonNull BookListAdapter.BookItemView holder, int position) {
         BookItem book=bookItem.get(position);
-        holder.img.setImageResource(book.getImg());
+
+        holder.img.setImageResource(book.getPic_link());
+
 
     }
 

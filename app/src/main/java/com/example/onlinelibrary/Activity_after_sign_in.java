@@ -40,6 +40,9 @@ public class Activity_after_sign_in extends AppCompatActivity {
                      case R.id.home:
                          currentFragment = new Fragment_home();
                          break;
+                     case R.id.Contents:
+                         currentFragment = new Fragment_contents();
+                         break;
                  }
                  getSupportFragmentManager().beginTransaction()
                          .replace(R.id.frame_for_fragment, currentFragment).commit();

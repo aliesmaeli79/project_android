@@ -2,13 +2,24 @@ package com.example.onlinelibrary;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     AppCompatButton login;
     static DataBaseUser database;
     static UserAccount userAccount;
+
 
 
 
@@ -30,9 +42,16 @@ public class MainActivity extends AppCompatActivity {
         name = findViewById(R.id.username_login);
         pass = findViewById(R.id.password_login);
 
+
+
         create_account = findViewById(R.id.create_account);
 
         login = findViewById(R.id.button_login);
+
+
+
+
+
 
 
         login.setOnClickListener(new View.OnClickListener() {
@@ -107,6 +126,8 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
+
+
 
 
     }

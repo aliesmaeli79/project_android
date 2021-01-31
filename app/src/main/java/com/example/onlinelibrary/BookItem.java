@@ -1,16 +1,18 @@
 package com.example.onlinelibrary;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class BookItem {
-    private int img;
-    public BookItem(int img){
-        this.img=img;
+    private int pic_link;
+
+    public BookItem(int pic_link) {
+        this.pic_link = pic_link;
     }
 
-    public int getImg() {
-        return img;
+    public int getPic_link() {
+        return pic_link;
     }
 
-    public void setImg(int img) {
-        this.img = img;
-    }
+
 }
