@@ -20,6 +20,8 @@ public class BookListAdapter extends RecyclerView.Adapter<BookListAdapter.BookIt
 
 
 
+
+
     private ArrayList<BookItem> bookItem;
 
     BookListAdapter(ArrayList<BookItem> bookItem){

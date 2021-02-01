@@ -6,43 +6,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:weightSum="100"
-    android:background="@drawable/main_background">
+    android:background="@drawable/background1">
 
     <Space
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="2" />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="98">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:weightSum="100"
-            android:orientation="vertical" >
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="10" />
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="90"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:backgroundTint="#e8e8e8"
-                app:cardCornerRadius="20dp"
-                android:layout_marginBottom="5dp"
-                app:cardElevation="5dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
+                    android:paddingTop="200dp"
                     android:weightSum="100">
 
                     <Space
@@ -132,6 +108,7 @@
                                                     android:layout_weight="9"
                                                     android:paddingLeft="20dp"
                                                     android:paddingRight="20dp"
+                                                    android:textColor="#000"
                                                     android:background="@drawable/background_text_login"
                                                     android:inputType="text"
                                                     android:id="@+id/name_new_setting"
@@ -150,16 +127,13 @@
                                                 android:orientation="vertical"
                                                 android:layout_height="match_parent">
 
-                                                <TextView
-                                                    android:layout_width="wrap_content"
+                                                <ImageView
+                                                    android:layout_width="120dp"
                                                     android:layout_height="0dp"
                                                     android:layout_weight="10"
                                                     android:gravity="bottom"
                                                     android:layout_gravity="right"
-                                                    android:paddingRight="15dp"
-                                                    android:fontFamily="@font/lalezar"
-                                                    android:textColor="#8b8b8b"
-                                                    android:text="نام کاربری جدید"/>
+                                                    android:src="@drawable/user_name"/>
 
                                                 <Space
                                                     android:layout_width="match_parent"
@@ -191,12 +165,13 @@
 
 
                                     </LinearLayout>
-
                                 </LinearLayout>
+
                                 <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:orientation="vertical">
+
 
                                     <LinearLayout
                                         android:layout_width="match_parent"
@@ -264,6 +239,7 @@
                                                     android:paddingRight="20dp"
                                                     android:paddingLeft="20dp"
                                                     android:layout_height="0dp"
+                                                    android:textColor="#000"
                                                     android:layout_weight="9"
                                                     android:background="@drawable/background_text_login"
                                                     android:inputType="text"
@@ -321,6 +297,7 @@
                                                     android:layout_weight="9"
                                                     android:paddingLeft="20dp"
                                                     android:paddingRight="20dp"
+                                                    android:textColor="#000"
                                                     android:background="@drawable/background_text_login"
                                                     android:inputType="text"
                                                     android:id="@+id/password_new_setting"
@@ -522,30 +499,6 @@
 
                 </LinearLayout>
 
-            </androidx.cardview.widget.CardView>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:weightSum="100">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="19"
-                android:src="@drawable/up_image_mainactivity"/>
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="81" />
-        </LinearLayout>
-
-    </RelativeLayout>
 
 
 

@@ -26,8 +26,6 @@ public class Fragment_home extends Fragment {
 
 
 
-
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -39,15 +37,13 @@ public class Fragment_home extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         list = view.findViewById(R.id.list_main);
+
         list.setLayoutManager(new LinearLayoutManager(getActivity()));
-
-
 
         ArrayList<Object> listItem = generateItems();
         ListAdapter adapter = new ListAdapter(listItem);
 
         list.setAdapter(adapter);
-
 
 
     }

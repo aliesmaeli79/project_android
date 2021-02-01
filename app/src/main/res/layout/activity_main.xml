@@ -6,13 +6,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="100"
-    android:background="@drawable/main_background"
+    android:background="@drawable/background_login"
     tools:context=".MainActivity">
 
     <Space
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="8" />
+        android:layout_weight="17" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -20,55 +20,16 @@
         android:layout_weight="77">
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:weightSum="100"
-            android:orientation="vertical" >
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="10" />
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="90"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:backgroundTint="#e8e8e8"
-                app:cardCornerRadius="20dp"
-                android:layout_marginBottom="5dp"
-                app:cardElevation="5dp">
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:weightSum="100">
+                    android:weightSum="105">
 
                     <Space
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="9" />
-
-                    <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="8">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:text="ورود به حساب کاربری"
-                            android:textColor="#000"
-                            android:fontFamily="@font/lalezar"
-                            android:textSize="17dp"
-                            />
-
-                    </FrameLayout>
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -89,20 +50,18 @@
                                 android:layout_weight="4.5" />
 
                             <EditText
-                                android:layout_width="match_parent"
+                                android:layout_width="350dp"
                                 android:paddingRight="20dp"
                                 android:paddingLeft="20dp"
                                 android:layout_height="0dp"
+                                android:layout_gravity="center"
                                 android:layout_weight="9"
+                                android:textColor="@color/black"
                                 android:background="@drawable/background_text_login"
                                 android:inputType="text"
                                 android:id="@+id/username_login"
                                 android:maxLength="20"
                                 android:lines="1"/>
-                            <Space
-                                android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="6.5" />
 
                         </LinearLayout>
 
@@ -112,24 +71,15 @@
                             android:orientation="vertical"
                             android:layout_height="match_parent">
 
-                            <TextView
-                                android:layout_width="wrap_content"
+                            <ImageView
+                                android:layout_width="190dp"
                                 android:layout_height="0dp"
                                 android:layout_weight="7"
-                                android:gravity="bottom"
+                                android:padding="5dp"
                                 android:layout_gravity="right"
-                                android:paddingRight="15dp"
-                                android:fontFamily="@font/lalezar"
-                                android:textColor="#8b8b8b"
-                                android:text="نام کاربری"/>
-
-                            <Space
-                                android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="13" />
+                                android:src="@drawable/user_name"/>
 
                         </LinearLayout>
-
 
                     </RelativeLayout>
                     <RelativeLayout
@@ -151,20 +101,19 @@
                                 android:layout_weight="4.5" />
 
                             <EditText
-                                android:layout_width="match_parent"
+                                android:layout_width="350dp"
                                 android:layout_height="0dp"
                                 android:layout_weight="9"
                                 android:paddingLeft="20dp"
+                                android:layout_gravity="center"
+                                android:textColor="@color/black"
                                 android:paddingRight="20dp"
                                 android:background="@drawable/background_text_login"
                                 android:inputType="textPassword"
                                 android:id="@+id/password_login"
                                 android:maxLength="20"
                                 android:lines="1"/>
-                            <Space
-                                android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="6.5" />
+
 
                         </LinearLayout>
 
@@ -174,16 +123,13 @@
                             android:orientation="vertical"
                             android:layout_height="match_parent">
 
-                            <TextView
-                                android:layout_width="wrap_content"
+                            <ImageView
+                                android:layout_width="170dp"
                                 android:layout_height="0dp"
                                 android:layout_weight="7"
-                                android:gravity="bottom"
+                                android:padding="7dp"
                                 android:layout_gravity="right"
-                                android:paddingRight="15dp"
-                                android:fontFamily="@font/lalezar"
-                                android:textColor="#8b8b8b"
-                                android:text="رمز عبور"/>
+                                android:src="@drawable/pass_image"/>
 
                             <Space
                                 android:layout_width="match_parent"
@@ -200,85 +146,47 @@
                         android:layout_height="0dp"
                         android:layout_weight="20"
                         android:weightSum="10"
+                        android:paddingBottom="55dp"
                         android:gravity="center"
-                        android:orientation="vertical">
-
-                        <Space
-                            android:layout_width="match_parent"
-                            android:layout_height="0dp"
-                            android:layout_weight="3" />
+                        android:orientation="horizontal">
 
                         <androidx.appcompat.widget.AppCompatButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="0dp"
-                            android:layout_weight="4"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+
+                            android:background="@drawable/button_sigin"
+                            android:gravity="center"
+                            android:minWidth="80dp"
+                            android:textSize="20dp"
+                            android:text="ثبت نام نکرده ام"
+                            android:fontFamily="@font/mirtabold"
+                            android:id="@+id/create_account"
+                            android:textColor="#000" />
+
+                        <Space
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="3
+"/>
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:layout_width="170dp"
+                            android:layout_height="wrap_content"
+
                             android:background="@drawable/button_login"
                             android:gravity="center"
                             android:minWidth="80dp"
-                            android:text="ورود"
+                            android:textSize="25dp"
+                            android:text="ورود به کتابخانه"
                             android:fontFamily="@font/lalezar"
                             android:id="@+id/button_login"
                             android:textColor="#fff" />
 
-                        <Space
-                            android:layout_width="match_parent"
-                            android:layout_height="0dp"
-                            android:layout_weight="3" />
                     </LinearLayout>
 
-                    <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="13" >
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center|top"
-                            android:textColor="#000"
-                            android:id="@+id/create_account"
-                            android:text="ثبت نام نکرده ام"/>
-                    </FrameLayout>
-
-                    <Space
-                        android:layout_width="wrap_content"
-                        android:layout_height="0dp"
-                        android:layout_weight="10" />
-
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:weightSum="100">
-
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="19"
-                android:src="@drawable/up_image_mainactivity"
-                />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="81" />
-        </LinearLayout>
     </RelativeLayout>
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="15" />
 
 </LinearLayout>
