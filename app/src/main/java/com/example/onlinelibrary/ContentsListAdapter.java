@@ -68,7 +68,6 @@ public class ContentsListAdapter extends RecyclerView.Adapter<ContentsListAdapte
         });
 
         Picasso.get().load(items.getPic_link()).into(holder.image);
-
     }
 
 

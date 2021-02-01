@@ -2,20 +2,19 @@ package com.example.onlinelibrary;
 
 public class SubjectListItem {
 
-    private String text_subject;
+    private int text_image;
     private int image_subject;
 
-    public String getText_subject() {
-        return text_subject;
+    public int getText_image() {
+        return text_image;
     }
 
-    public void setText_subject(String text_subject) {
-        this.text_subject = text_subject;
+    public void setText_image(int text_image) {
+        this.text_image = text_image;
     }
 
-
-    public SubjectListItem(String text_subject, int image_subject) {
-        this.text_subject = text_subject;
+    public SubjectListItem(int text_image, int image_subject) {
+        this.text_image = text_image;
         this.image_subject = image_subject;
     }
 

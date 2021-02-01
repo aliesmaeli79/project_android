@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LayoutAnimationController;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -16,6 +18,7 @@ import java.util.ArrayList;
 public class Fragment_contents extends Fragment {
 
     RecyclerView list;
+
 
     @Nullable
     @Override
@@ -31,7 +34,9 @@ public class Fragment_contents extends Fragment {
         list = view.findViewById(R.id.list_contents);
         list.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-
+        int resId = R.anim.layout_animation_down_up;
+        LayoutAnimationController animation = AnimationUtils.loadLayoutAnimation(view.getContext(), resId);
+        list.setLayoutAnimation(animation);
 
         ArrayList<SubjectListItem> listItem = generateSubject();
 
@@ -46,17 +51,17 @@ public class Fragment_contents extends Fragment {
         ArrayList<SubjectListItem> data = new ArrayList<>();
 
 
-        data.add(new SubjectListItem("کودکان",R.drawable.subject_children));
-        data.add(new SubjectListItem("علمی",R.drawable.subject_academic));
-        data.add(new SubjectListItem("زبان خارجه",R.drawable.subject_foreign_language));
-        data.add(new SubjectListItem("تاریخی",R.drawable.subject_historical));
-        data.add(new SubjectListItem("سبک زندگی",R.drawable.subject_life_style));
-        data.add(new SubjectListItem("روانشناسی",R.drawable.subject_psychology));
-        data.add(new SubjectListItem("امداد",R.drawable.subject_relief));
-        data.add(new SubjectListItem("اجتماعی",R.drawable.subject_social));
-        data.add(new SubjectListItem("ورزشی",R.drawable.subject_sport));
-        data.add(new SubjectListItem("فلسفی",R.drawable.subject_philosophical));
-        data.add(new SubjectListItem("رمان و داستان",R.drawable.subject_story));
+        data.add(new SubjectListItem(R.drawable.history_text,R.drawable.subject_children));
+        data.add(new SubjectListItem(R.drawable.history_text,R.drawable.subject_academic));
+        data.add(new SubjectListItem(R.drawable.history_text,R.drawable.subject_foreign_language));
+        data.add(new SubjectListItem(R.drawable.history_text,R.drawable.subject_historical));
+        data.add(new SubjectListItem(R.drawable.history_text,R.drawable.subject_life_style));
+        data.add(new SubjectListItem(R.drawable.history_text,R.drawable.subject_psychology));
+        data.add(new SubjectListItem(R.drawable.history_text,R.drawable.subject_relief));
+        data.add(new SubjectListItem(R.drawable.history_text,R.drawable.subject_social));
+        data.add(new SubjectListItem(R.drawable.history_text,R.drawable.subject_sport));
+        data.add(new SubjectListItem(R.drawable.history_text,R.drawable.subject_philosophical));
+        data.add(new SubjectListItem(R.drawable.history_text,R.drawable.subject_story));
 
         return data;
 

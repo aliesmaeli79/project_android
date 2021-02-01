@@ -26,7 +26,7 @@ public class contents_book extends AppCompatActivity {
     List<Books> list=new ArrayList<>();
     ApiInterface request;
 
-    ImageView imageView_back;
+
 
     String url="http://uniproject.freecloudsite.com/data/";
 

@@ -10,6 +10,5 @@ public interface ApiInterface {
         @GET("getData.php")
         Call<List<Books>> getdata();
 
-        @GET("getData.php")
-        Call<List<BookItem>> getdata1();
+
 }

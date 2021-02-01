@@ -6,20 +6,28 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:weightSum="100"
-    android:background="@drawable/background1">
+    android:background="@drawable/background_setting">
 
     <Space
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2" />
+        android:layout_weight="10" />
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="90">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:paddingTop="200dp"
-                    android:weightSum="100">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="100"
+            android:orientation="vertical" >
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="10" />
 
                     <Space
                         android:layout_width="match_parent"
@@ -103,12 +111,12 @@
                                                     android:layout_weight="4.5" />
 
                                                 <EditText
-                                                    android:layout_width="match_parent"
+                                                    android:layout_width="300dp"
                                                     android:layout_height="0dp"
-                                                    android:layout_weight="9"
+                                                    android:layout_weight="11"
                                                     android:paddingLeft="20dp"
                                                     android:paddingRight="20dp"
-                                                    android:textColor="#000"
+                                                    android:layout_gravity="center"
                                                     android:background="@drawable/background_text_login"
                                                     android:inputType="text"
                                                     android:id="@+id/name_new_setting"
@@ -125,15 +133,16 @@
                                                 android:layout_width="match_parent"
                                                 android:weightSum="20"
                                                 android:orientation="vertical"
+                                                android:paddingRight="70dp"
                                                 android:layout_height="match_parent">
 
                                                 <ImageView
-                                                    android:layout_width="120dp"
+                                                    android:layout_width="100dp"
                                                     android:layout_height="0dp"
                                                     android:layout_weight="10"
                                                     android:gravity="bottom"
                                                     android:layout_gravity="right"
-                                                    android:src="@drawable/user_name"/>
+                                                    android:src="@drawable/setting_name"/>
 
                                                 <Space
                                                     android:layout_width="match_parent"
@@ -165,13 +174,12 @@
 
 
                                     </LinearLayout>
-                                </LinearLayout>
 
+                                </LinearLayout>
                                 <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:orientation="vertical">
-
 
                                     <LinearLayout
                                         android:layout_width="match_parent"
@@ -235,12 +243,12 @@
                                                     android:layout_weight="4" />
 
                                                 <EditText
-                                                    android:layout_width="match_parent"
+                                                    android:layout_width="300dp"
                                                     android:paddingRight="20dp"
                                                     android:paddingLeft="20dp"
                                                     android:layout_height="0dp"
-                                                    android:textColor="#000"
-                                                    android:layout_weight="9"
+                                                    android:layout_weight="11"
+                                                    android:layout_gravity="center"
                                                     android:background="@drawable/background_text_login"
                                                     android:inputType="text"
                                                     android:id="@+id/password_past_setting"
@@ -251,18 +259,16 @@
                                                 android:layout_width="match_parent"
                                                 android:weightSum="20"
                                                 android:orientation="vertical"
+                                                android:paddingRight="70dp"
                                                 android:layout_height="match_parent">
 
-                                                <TextView
-                                                    android:layout_width="wrap_content"
+                                                <ImageView
+                                                    android:layout_width="100dp"
                                                     android:layout_height="0dp"
-                                                    android:layout_weight="12"
+                                                    android:layout_weight="10"
                                                     android:gravity="bottom"
                                                     android:layout_gravity="right"
-                                                    android:paddingRight="15dp"
-                                                    android:fontFamily="@font/lalezar"
-                                                    android:textColor="#8b8b8b"
-                                                    android:text="رمز عبور قدیم"/>
+                                                    android:src="@drawable/setting_passold"/>
 
                                                 <Space
                                                     android:layout_width="match_parent"
@@ -292,12 +298,12 @@
                                                     android:layout_weight="4.5" />
 
                                                 <EditText
-                                                    android:layout_width="match_parent"
+                                                    android:layout_width="300dp"
                                                     android:layout_height="0dp"
-                                                    android:layout_weight="9"
+                                                    android:layout_weight="11"
                                                     android:paddingLeft="20dp"
                                                     android:paddingRight="20dp"
-                                                    android:textColor="#000"
+                                                    android:layout_gravity="center"
                                                     android:background="@drawable/background_text_login"
                                                     android:inputType="text"
                                                     android:id="@+id/password_new_setting"
@@ -314,18 +320,16 @@
                                                 android:layout_width="match_parent"
                                                 android:weightSum="20"
                                                 android:orientation="vertical"
+                                                android:paddingRight="70dp"
                                                 android:layout_height="match_parent">
 
-                                                <TextView
-                                                    android:layout_width="wrap_content"
+                                                <ImageView
+                                                    android:layout_width="100dp"
                                                     android:layout_height="0dp"
                                                     android:layout_weight="10"
                                                     android:gravity="bottom"
                                                     android:layout_gravity="right"
-                                                    android:paddingRight="15dp"
-                                                    android:fontFamily="@font/lalezar"
-                                                    android:textColor="#8b8b8b"
-                                                    android:text="رمز عبور جدید"/>
+                                                    android:src="@drawable/setting_passnew"/>
 
                                                 <Space
                                                     android:layout_width="match_parent"
@@ -428,10 +432,11 @@
                                                         android:layout_weight="4.5" />
 
                                                     <EditText
-                                                        android:layout_width="match_parent"
+                                                        android:layout_width="300dp"
                                                         android:layout_height="0dp"
-                                                        android:layout_weight="9"
+                                                        android:layout_weight="11"
                                                         android:paddingLeft="20dp"
+                                                        android:layout_gravity="center"
                                                         android:paddingRight="20dp"
                                                         android:background="@drawable/background_text_login"
                                                         android:inputType="textEmailAddress"
@@ -448,18 +453,16 @@
                                                     android:layout_width="match_parent"
                                                     android:weightSum="20"
                                                     android:orientation="vertical"
+                                                    android:paddingRight="70dp"
                                                     android:layout_height="match_parent">
 
-                                                    <TextView
-                                                        android:layout_width="wrap_content"
+                                                    <ImageView
+                                                        android:layout_width="100dp"
                                                         android:layout_height="0dp"
                                                         android:layout_weight="10"
                                                         android:gravity="bottom"
                                                         android:layout_gravity="right"
-                                                        android:paddingRight="15dp"
-                                                        android:fontFamily="@font/lalezar"
-                                                        android:textColor="#8b8b8b"
-                                                        android:text="ایمیل جدید"/>
+                                                        android:src="@drawable/setting_emailnew"/>
 
                                                     <Space
                                                         android:layout_width="match_parent"
@@ -500,6 +503,8 @@
                 </LinearLayout>
 
 
+
+    </RelativeLayout>
 
 
 </LinearLayout>
