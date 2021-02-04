@@ -4,10 +4,10 @@ import java.util.ArrayList;
 
 public class BookListItem {
 
-    private ArrayList<BookItem> items;
+    private ArrayList<Books> items;
     private String title;
 
-    public BookListItem(String title, ArrayList<BookItem> items) {
+    public BookListItem(String title, ArrayList<Books> items) {
         this.items=new ArrayList<>();
         this.items.addAll(items);
         this.title=title;
@@ -21,11 +21,11 @@ public class BookListItem {
         this.title = title;
     }
 
-    public ArrayList<BookItem> getItems() {
+    public ArrayList<Books> getItems() {
         return items;
     }
 
-    public void setItems(ArrayList<BookItem> items) {
+    public void setItems(ArrayList<Books> items) {
         this.items = items;
     }
 }

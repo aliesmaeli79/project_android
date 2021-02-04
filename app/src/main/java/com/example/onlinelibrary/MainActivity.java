@@ -21,6 +21,9 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import static com.example.onlinelibrary.GlobalRequestItem.RESPONSE_ITEM;
+import static com.example.onlinelibrary.GlobalRequestItem.RESPONSE_ITEM1;
+
 public class MainActivity extends AppCompatActivity {
 
     EditText name, pass;
@@ -28,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     AppCompatButton login;
     static DataBaseUser database;
     static UserAccount userAccount;
+
 
 
 
@@ -44,13 +48,29 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
         create_account = findViewById(R.id.create_account);
 
         login = findViewById(R.id.button_login);
 
 
+        ApiInterface request;
 
+        String url="http://uniproject.freecloudsite.com/data/";
+        request=ApiClient.getApiClient(url).create(ApiInterface.class);
 
+        request.getdata().enqueue(new Callback<List<Books>>() {
+            @Override
+            public void onResponse(Call<List<Books>> call, Response<List<Books>> response) {
+                RESPONSE_ITEM =response.body();
+            }
+
+            @Override
+            public void onFailure(Call<List<Books>> call, Throwable t) {
+                Toast.makeText(MainActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+                Log.e("ERROR",t.getMessage()+"");
+            }
+        });
 
 
 
@@ -97,8 +117,34 @@ public class MainActivity extends AppCompatActivity {
                                 userAccount = new UserAccount();
                                 userAccount.setName(name_user);
                                 userAccount.setPassword(pass_sent);
-                                Intent intent = new Intent(MainActivity.this, Activity_after_sign_in.class);
-                                startActivity(intent);
+
+//                                ApiInterface request;
+//
+//                                String url="http://uniproject.freecloudsite.com/data/";
+//                                request=ApiClient.getApiClient(url).create(ApiInterface.class);
+//
+//                                request.getdata().enqueue(new Callback<List<Books>>() {
+//                                    @Override
+//                                    public void onResponse(Call<List<Books>> call, Response<List<Books>> response) {
+//                                        RESPONSE_ITEM =response.body();
+//                                    }
+//
+//                                    @Override
+//                                    public void onFailure(Call<List<Books>> call, Throwable t) {
+//                                        Toast.makeText(MainActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+//                                        Log.e("ERROR",t.getMessage()+"");
+//                                    }
+//                                });
+                                RESPONSE_ITEM1=RESPONSE_ITEM;
+                                if(RESPONSE_ITEM.size()!=0) {
+                                    Intent intent = new Intent(MainActivity.this, Activity_after_sign_in.class);
+                                    startActivity(intent);
+                                    finish();
+                                }
+                                else{
+                                    Toast.makeText(MainActivity.this, "لطفا یک بار دیگر کلید ورود را فشار دهید", Toast.LENGTH_SHORT).show();
+                                }
+
                             } else {
                                 Toast.makeText(MainActivity.this, "پسورد نامعتبر است", Toast.LENGTH_SHORT).show();
                                 pass.setText("");
@@ -115,7 +161,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
 
 
         create_account.setOnClickListener(new View.OnClickListener() {

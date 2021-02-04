@@ -7,9 +7,24 @@ public class Books {
     List<Books> data;
 
 
-    private String id,name,price,author,pic_link,download_link,published,description;
+    private String id,name,price,genre,author,pic_link,download_link,published,description;
+
+    public String getGenre() {
+        return genre;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+
 
     private float rate;
+    private int count;
+
+    public int getCount() {
+        return count;
+    }
 
     public String getPic_link() {
         return pic_link;
@@ -27,13 +42,7 @@ public class Books {
         return download_link;
     }
 
-    public String getPublished() {
-        return published;
-    }
 
-    public String getDescription() {
-        return description;
-    }
 
     public String getName() {
         return name;

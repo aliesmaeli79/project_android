@@ -247,7 +247,7 @@
                                                     android:paddingRight="20dp"
                                                     android:paddingLeft="20dp"
                                                     android:layout_height="0dp"
-                                                    android:layout_weight="11"
+                                                    android:layout_weight="10"
                                                     android:layout_gravity="center"
                                                     android:background="@drawable/background_text_login"
                                                     android:inputType="text"

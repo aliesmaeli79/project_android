@@ -4,15 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BookItem {
-    private int pic_link;
 
-    public BookItem(int pic_link) {
-        this.pic_link = pic_link;
+    private int individual_book;
+
+
+    public BookItem(int individual_book) {
+        this.individual_book = individual_book;
     }
 
-    public int getPic_link() {
-        return pic_link;
+    public int getIndividual_book() {
+        return individual_book;
     }
-
-
 }

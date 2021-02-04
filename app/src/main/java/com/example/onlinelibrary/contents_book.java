@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -18,17 +19,16 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import static com.example.onlinelibrary.GlobalRequestItem.RESPONSE_ITEM;
+import static com.example.onlinelibrary.Subject_to_Book.SPECIFIC_BOOKS;
+
 public class contents_book extends AppCompatActivity {
 
 
 
     RecyclerView list_content;
-    List<Books> list=new ArrayList<>();
-    ApiInterface request;
 
 
-
-    String url="http://uniproject.freecloudsite.com/data/";
 
 
     @Override
@@ -37,29 +37,18 @@ public class contents_book extends AppCompatActivity {
         setContentView(R.layout.activity_contents_book);
 
 
-        request=ApiClient.getApiClient(url).create(ApiInterface.class);
 
         list_content=findViewById(R.id.contents_list);
-
+//
         list_content.setLayoutManager(new LinearLayoutManager(this));
 
+        if(SPECIFIC_BOOKS.size()!=0) {
+            ContentsListAdapter adapter = new ContentsListAdapter(SPECIFIC_BOOKS);
+
+            list_content.setAdapter(adapter);
+        }
 
 
-        request.getdata().enqueue(new Callback<List<Books>>() {
-            @Override
-            public void onResponse(Call<List<Books>> call, Response<List<Books>> response) {
-
-                list=response.body();
-                ContentsListAdapter adapter=new ContentsListAdapter(list);
-                list_content.setAdapter(adapter);
-            }
-
-            @Override
-            public void onFailure(Call<List<Books>> call, Throwable t) {
-                Toast.makeText(contents_book.this, t.getMessage(), Toast.LENGTH_SHORT).show();
-                Log.e("ERROR",t.getMessage()+"");
-            }
-        });
 
     }
 }

@@ -20,6 +20,9 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import static com.example.onlinelibrary.GlobalRequestItem.RESPONSE_ITEM;
+import static com.example.onlinelibrary.GlobalRequestItem.RESPONSE_ITEM1;
+
 public class Fragment_home extends Fragment {
 
     RecyclerView list;
@@ -46,6 +49,7 @@ public class Fragment_home extends Fragment {
         list.setAdapter(adapter);
 
 
+
     }
 
 
@@ -69,40 +73,58 @@ public class Fragment_home extends Fragment {
 
         AppListItem appListItem=new AppListItem(appItems);
         data.add(appListItem);
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        ArrayList<BookItem> bookItems =new ArrayList<>();
+        ArrayList<Books> most_view = new ArrayList<>();
 
 
-        bookItems.add(new BookItem(R.drawable.book_test));
-        bookItems.add(new BookItem(R.drawable.book_test));
-        bookItems.add(new BookItem(R.drawable.book_test));
-        bookItems.add(new BookItem(R.drawable.book_test));
-        bookItems.add(new BookItem(R.drawable.book_test));
+            most_view.add(RESPONSE_ITEM1.get(0));
+            most_view.add(RESPONSE_ITEM1.get(1));
+            most_view.add(RESPONSE_ITEM1.get(2));
+            most_view.add(RESPONSE_ITEM1.get(3));
+            most_view.add(RESPONSE_ITEM1.get(4));
 
-        BookListItem bookListItem=new BookListItem("پربازدیدترینها",bookItems);
-        data.add(bookListItem);
 
-        ArrayList<BookItem> bookItems1 =new ArrayList<>();
-        bookItems1.add(new BookItem(R.drawable.book_test));
-        bookItems1.add(new BookItem(R.drawable.book_test));
-        bookItems1.add(new BookItem(R.drawable.book_test));
-        bookItems1.add(new BookItem(R.drawable.book_test));
-        bookItems1.add(new BookItem(R.drawable.book_test));
-        bookItems1.add(new BookItem(R.drawable.book_test));
+            BookListItem bookListItem = new BookListItem("پربازدیدترینها", most_view);
+            data.add(bookListItem);
 
-        BookListItem bookListItem1=new BookListItem("پرفروش ترینها",bookItems);
-        data.add(bookListItem1);
+//        else{
+//            BookListItem bookListItem = new BookListItem("پربازدیدترینها", most_view);
+//
+//        }
+//
 
-        ArrayList<BookItem> bookItems2 =new ArrayList<>();
-        bookItems2.add(new BookItem(R.drawable.book_test));
-        bookItems2.add(new BookItem(R.drawable.book_test));
-        bookItems2.add(new BookItem(R.drawable.book_test));
-        bookItems2.add(new BookItem(R.drawable.book_test));
-        bookItems2.add(new BookItem(R.drawable.book_test));
-        bookItems2.add(new BookItem(R.drawable.book_test));
 
-        BookListItem bookListItem2=new BookListItem("جدید ترین ها",bookItems);
-        data.add(bookListItem2);
+
+
+        ArrayList<Books> most_view1 = new ArrayList<>();
+
+            most_view1.add(RESPONSE_ITEM1.get(16));
+            most_view1.add(RESPONSE_ITEM1.get(15));
+            most_view1.add(RESPONSE_ITEM1.get(14));
+            most_view1.add(RESPONSE_ITEM1.get(13));
+            most_view1.add(RESPONSE_ITEM1.get(12));
+
+
+        BookListItem bookListItem1=new BookListItem("پرفروش ترینها",most_view1);
+            data.add(bookListItem1);
+
+//        else{
+//            BookListItem bookListItem1=new BookListItem("پرفروش ترینها",most_view1);
+//
+//        }
+
+
+
+//        BookListItem bookListItem=new BookListItem("پربازدیدترینها",bookItems);
+//        data.add(bookListItem);
+//
+//
+//
+//        BookListItem bookListItem1=new BookListItem("پرفروش ترینها",bookItems);
+//        data.add(bookListItem1);
+//
+
 
         return data;
 

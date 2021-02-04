@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network_security_config.xml xmlns:android="http://schemas.android.com/apk/res/android">
+    <base-config cleartextTrafficPermitted="true" />
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">http://uniproject.freecloudsite.com/data/getData.php</domain>
+    </domain-config>
+</network_security_config.xml>

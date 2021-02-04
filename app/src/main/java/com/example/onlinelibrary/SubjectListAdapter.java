@@ -8,12 +8,16 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+
+import static com.example.onlinelibrary.GlobalRequestItem.RESPONSE_ITEM;
+import static com.example.onlinelibrary.Subject_to_Book.SPECIFIC_BOOKS;
 
 public class SubjectListAdapter extends RecyclerView.Adapter<SubjectListAdapter.CardItem> {
 
@@ -33,42 +37,28 @@ public class SubjectListAdapter extends RecyclerView.Adapter<SubjectListAdapter.
     public void onBindViewHolder(@NonNull CardItem holder, int position) {
         SubjectListItem item=mItems.get(position);
 
+
         holder.text.setImageResource(item.getText_image());
 
 
-//        holder.image.setImageResource(item.getImage_subject());
 
-//        if (position % 11 == 0) {
-//            holder.linearLayout.setBackgroundColor(Color.parseColor("#38ada8"));
-//        } else if (position % 11 == 1) {
-//            holder.linearLayout.setBackgroundColor(Color.parseColor("#efc41d"));
-//        } else if (position % 11 == 2) {
-//            holder.linearLayout.setBackgroundColor(Color.parseColor("#736357"));
-//        } else if (position % 11 == 3) {
-//            holder.linearLayout.setBackgroundColor(Color.parseColor("#d77a27"));
-//        } else if (position % 11 == 4) {
-//            holder.linearLayout.setBackgroundColor(Color.parseColor("#23a0da"));
-//        } else if (position % 11 == 5) {
-//            holder.linearLayout.setBackgroundColor(Color.parseColor("#6abd96"));
-//        } else if (position % 11 == 6) {
-//            holder.linearLayout.setBackgroundColor(Color.parseColor("#ec1a23"));
-//        } else if (position % 11 == 7) {
-//            holder.linearLayout.setBackgroundColor(Color.parseColor("#005e60"));
-//        } else if (position % 11 == 8) {
-//            holder.linearLayout.setBackgroundColor(Color.parseColor("#ec6051"));
-//        } else if (position % 11 == 9) {
-//            holder.linearLayout.setBackgroundColor(Color.parseColor("#006699"));
-//        }else if (position % 11 == 10) {
-//            holder.linearLayout.setBackgroundColor(Color.parseColor("#ff6838"));
-//        }
-
-                holder.cardView.setOnClickListener(new View.OnClickListener() {
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(SPECIFIC_BOOKS.size()!=0) {
+                    SPECIFIC_BOOKS.clear();
+                }
+                for(int i=0; i<RESPONSE_ITEM.size();i++){
+                    if(RESPONSE_ITEM.get(i).getGenre().equals(item.getName_subject())){
+                        SPECIFIC_BOOKS.add(RESPONSE_ITEM.get(i));
+                    }
+
+                }
                 Intent intent=new Intent(v.getContext(),contents_book.class);
                 v.getContext().startActivity(intent);
             }
         });
+
     }
 
 

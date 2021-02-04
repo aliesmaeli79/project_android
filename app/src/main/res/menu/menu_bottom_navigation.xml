@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:title="راهنما"
+    <item android:title="حساب من"
         android:id="@+id/Guide"
-        android:icon="@drawable/guide"/>
+        android:icon="@drawable/account"/>
     <item android:title="تنظيمات"
         android:id="@+id/setting"
         android:icon="@drawable/setting"/>
@@ -12,8 +12,8 @@
     <item android:title="فهرست"
         android:id="@+id/Contents"
         android:icon="@drawable/contents"/>
-    <item android:title="حساب من"
+    <item android:title="راهنما"
         android:id="@+id/My_account"
-        android:icon="@drawable/account"/>
+        android:icon="@drawable/guide"/>
 
 </menu>

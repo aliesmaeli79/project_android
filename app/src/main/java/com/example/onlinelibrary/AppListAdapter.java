@@ -6,6 +6,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -31,6 +32,8 @@ public class AppListAdapter extends RecyclerView.Adapter<AppListAdapter.AppItemV
         AppItem app=appItem.get(position);
         holder.textView.setText(app.getName());
         holder.img.setImageResource(app.getImg());
+
+
     }
 
     @Override

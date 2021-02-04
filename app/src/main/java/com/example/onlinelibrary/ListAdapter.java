@@ -22,10 +22,13 @@ import retrofit2.Response;
 
 public class ListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
+
     private ArrayList<Object> mItems =new ArrayList<>();
     ListAdapter(ArrayList<Object> items){
         mItems.addAll(items);
+
     }
+
 
     @NonNull
     @Override
@@ -74,11 +77,8 @@ public class ListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             AppListAdapter appListAdapter=new AppListAdapter(item.getItems());
             ((AppItems) holder).list2.setAdapter(appListAdapter);
 
-
-
         }
         else if(holder instanceof BookItems){
-
 
             BookListItem item= (BookListItem) mItems.get(position);
             ((BookItems) holder).text_title.setText(item.getTitle());
@@ -87,8 +87,12 @@ public class ListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
             linearLayoutManager.setOrientation(RecyclerView.HORIZONTAL);
 
+
+
             ((BookItems) holder).list3.setLayoutManager(linearLayoutManager);
+
             BookListAdapter bookListAdapter=new BookListAdapter(item.getItems());
+
             ((BookItems) holder).list3.setAdapter(bookListAdapter);
 
         }

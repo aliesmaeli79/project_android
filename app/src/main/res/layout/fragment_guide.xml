@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background2"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/image_guid"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:src="@drawable/guide_program" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingRight="10sp"
+        android:paddingBottom="20dp"
+        android:paddingLeft="10sp"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_old"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/button_login"
+            android:fontFamily="@font/lalezar"
+            android:minWidth="80dp"
+            android:minHeight="38dp"
+            android:textSize="22dp"
+            android:text="قبلی"
+            android:textColor="#fff" />
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_new"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/button_login"
+            android:fontFamily="@font/lalezar"
+            android:minWidth="80dp"
+            android:minHeight="38dp"
+            android:textSize="22dp"
+            android:text="بعدی"
+            android:textColor="#fff" />
+    </LinearLayout>
+
+
+</LinearLayout>

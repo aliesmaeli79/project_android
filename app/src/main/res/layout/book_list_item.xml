@@ -13,7 +13,6 @@
             android:layout_height="wrap_content"
             android:textColor="#B9000000"
             android:textSize="18sp"
-            android:text="بیشتر"
             android:fontFamily="@font/mirtabold"
             android:padding="10dp"/>
         <Space

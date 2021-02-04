@@ -5,8 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:weightSum="2"
     tools:context=".Activity_after_sign_in">
+
+
+
+
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -26,22 +29,42 @@
             android:src="@drawable/ic_baseline_search_24"/>
 
         <EditText
+            android:id="@+id/search_book"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="#866b70"
             android:paddingRight="40dp"
+            android:maxLines="1"
+            android:maxLength="20"
             android:background="@null"
             android:paddingTop="10dp"
             android:fontFamily="@font/lalezar"
             android:hint="کتابت رو پیدا کن"/>
 
     </RelativeLayout>
-
-    <FrameLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:id="@+id/frame_for_fragment"
-        android:layout_weight="2" />
+        android:layout_weight="1">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            android:id="@+id/frame_for_fragment"/>
+        <RelativeLayout
+            android:id="@+id/relative_layout_search"
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:layout_height="match_parent">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview_search"
+                android:layout_width="match_parent"
+                android:background="@drawable/background2"
+                android:layout_height="match_parent"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+
 
     <com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx
         android:layout_width="match_parent"
@@ -50,10 +73,15 @@
         app:itemRippleColor="@color/selector_navigation"
         android:id="@+id/bottom_navigation"
         app:labelVisibilityMode="labeled"
+        android:layout_alignParentBottom="true"
         app:itemIconTint="@color/selector_navigation"
         android:background="@drawable/shape_bottom_navigation"
         app:itemTextAppearanceActive="@style/bottomNavigationView.Active"
         app:menu="@menu/menu_bottom_navigation"/>
+
+
+
+
 
 
 </LinearLayout>
